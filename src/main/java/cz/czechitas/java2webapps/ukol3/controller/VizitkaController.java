@@ -19,14 +19,14 @@ public class VizitkaController {
 
     @GetMapping("/")
     public ModelAndView seznam() {
-        ModelAndView result = new ModelAndView("seznam");
+        ModelAndView result = new ModelAndView("/seznam");
         result.addObject("seznam", service.getAll());
         return result;
     }
 
     @GetMapping("/detail/{id}")
     public ModelAndView detail(@PathVariable int id) {
-        ModelAndView result = new ModelAndView("detail");
+        ModelAndView result = new ModelAndView("/detail");
         result.addObject("vizitka", service.getById(id));
         return result;
     }

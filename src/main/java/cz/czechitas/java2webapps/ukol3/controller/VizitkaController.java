@@ -30,6 +30,7 @@ public class VizitkaController {
     public ModelAndView detail(@PathVariable int id) {
         ModelAndView result = new ModelAndView("/detail");
         result.addObject("vizitka", service.getById(id));
+        result.addObject("id", id);
         return result;
     }
 
@@ -41,6 +42,12 @@ public class VizitkaController {
     @PostMapping("/nova")
     public String append(Vizitka vizitka) {
         service.append(vizitka);
+        return "redirect:/";
+    }
+
+    @PostMapping("/delete")
+    public String delete(int id) {
+        service.deleteById(id);
         return "redirect:/";
     }
 }

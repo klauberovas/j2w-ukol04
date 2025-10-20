@@ -28,6 +28,10 @@
                 [/#if]
             </div>
         </div>
+        <form method="post" action="/delete" class="d-flex justify-content-center">
+            <input type="hidden" name="id" value="${id}"/>
+            <button type="submit" class="btn btn-secondary btn-danger">Smazat</button>
+        </form>
     </div>
 
     <div class="mapa">
